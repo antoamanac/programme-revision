@@ -1,0 +1,176 @@
+## Comportement déontologique
+1. Financièrement, suis-je indépendant de mon client ?
+2. Affectivement, suis-je indépendant de mon client ?
+3. Le dossier de mon client présente-t-il des difficultés techniques insurmontables ?
+4. D'une manière générale, sommes nous compétent pour traiter ce dossier ?
+5. L'évolution de l'environnement et de la relation est-elle de nature à remettre
+6. en cause le maintien de la mission ?
+7. Un programme de travail a-t-il été mis en place pour traiter le dossier ?
+8. Ce programme de travail est-il adapté ?
+9. A L'issue de nos travaux, pouvons-nous penser que les flux financiers existant
+10. sont d'origine douteuse ou s'intègrent dans un système de blanchiment ?
+11. Une lettre de mission a-t-elle été signée ?
+
+## Norme Blanchiment
+1. effectifs, du réprésentant légal (ou de la personne en contact avec nous sur le dossier)
+2. 2bis/ Renseigner sur le tableau d'avancement la date de fin de validité de la CNI ou du passeport qui expire le plus tôt
+3. En cas d'anomalie, proposer une mission de mise à jour du registre)
+4. Mettre à jour l'organigramme de la société (s'il est nécessaire d'en établir un)
+
+## Régularité Formelle
+1. Si oui, le document est il dans la GED ?
+2. Si oui, attention au seuil pour le CAC et au bilan pédagogique
+3. Si oui, le client est il informé ?
+4. Proposer une mission juridique de mise à jour du K BIS si nécessaire
+
+## Dépassement des seuils
+1. Dépassement de 2 des 3 seuils : nomination CAC obligatoire (en K€)
+2. Société commerciales (SA, SCA, SNC, SARL, SAS)
+3. Filiale significative (contrôlée directement ou indirectement)
+4. Dépassement des seuils en matière sociales
+5. Vérifier si l'entreprise dépasse les seuils d'effectifs suivants
+6. > 10 salariés : Versement transport ; Délégué du personnel
+7. > 20 salariés : Règlement intérieur ; Cotisation AGEFIPH ; Effort construction
+8. > 50 salariés : Comité d'entreprise, CHSCT
+9. Dépassement des seuils en matière fiscales
+10. Vérifier si le régime fiscal appliqué est le bon, en fonction du CA
+
+## Disponiblités
+1. Si oui => présent dans la GED ? Si non => copie de la demande par mail dans GED ?
+2. d'amortissement correspondant.
+3. non échus et intérêts payés d'avance ).
+4. la charge financière de l'exercice.
+5. Procédure collective (Sauvegarde, RJ), a-t-on pensé à isoler les sommes
+6. avant date d'entrée en procédure + vérifier concordance avec état des créances)?
+
+## Frs cut off achats
+1. 1 bis / Demander au client de nous fournir les factures non réglées
+2. FNP : Demander les factures M+1 et M+2 au client
+3. AAR : Demander les avoirs M+1 et M+2 au client
+4. CCA : Analyser les comptes assurance, location, maintenance, publicité…
+5. Procédure collective (Sauvegarde, RJ), a-t-on pensé à isoler les sommes
+6. avant date d'entrée en procédure + vérifier concordance avec état des créances)?
+
+## Charges externes
+1. appliquées correctement (modifications au 01/01/2017)
+2. relatifs aux véhicules de tourisme.
+3. location véhicule > 1 mois ? (impact TVS)
+4. Si non, à voir avec le gérant pour en mettre un.
+5. 2bis/ Les IK sont interdits en BIC - Vérifier ce point
+6. 2Ter/ Vérifier que le véhicule est à l'actif/Leasing/LLD du bilan si frais réel
+7. 2 Quater / Vérifier que la même règle de déduction est utilisée pour tous
+8. les véhicules. Pour BNC si utilisation mixte VP+VU, obligation de faire au
+9. réel pour tous les véhicules.
+10. des ik sont comptabilisées (salariés y compris)
+11. Sinon prévenir le client dans la note de synthèse
+
+## Clients cut off ventes
+1. 1 bis / Demander au client de nous fournir les factures non réglées
+2. 1 ter/ Cadragre Gestion Commerciale / Compta
+3. 2 bis / CA UE ou Export => Utiliser les comptes 70695X - 70795x - 70895X
+4. ou prescription commerciale (5 ans entre professionnels, 2 ans avec particuliers)
+5. FAE : Demander les factures M+1 et M+2 au client
+6. AAE : Demander les avoirs M+1 et M+2 au client
+7. Procédure collective (Sauvegarde, RJ), a-t-on pensé à isoler les sommes
+8. avant date d'entrée en procédure + vérifier concordance avec état des créances)?
+9. Les factures de vente du client sont-elles établies dans les règles ?
+
+## Personnel
+1. l'un des salariés et l'un des associés ou des dirigeants ?
+2. Ou est-ce que l'un des salariés est aussi associé de l'entreprise ?
+3. ==> Si OUI est-ce qu'un dossier a été monté auprès de Pôle Emploi pour
+4. s'assurer de la prise en charge chômage ?
+5. Procédure collective (Sauvegarde, RJ), as-t-on pensé à isoler les sommes
+6. avant date d'entrée en procédure + vérifier concordance avec état des créances)?
+7. dans un compte NDF (pour ne pas polluer le compte courant de l'associé)
+8. civile avec la DSI de la même année
+9. qu'il ne validera pas ses 4 trimestres.
+10. Sinon elles seront mal reportées dans la liasse BNC
+
+## Stocks et en cours
+1. Demander à l'entreprise la date à laquelle a été faite la prise d'inventaire
+2. et en tenir compte pour le contrôle du cut-off.
+
+## Immobilisations
+1. Immobilisations corporelles ou incorporelles
+2. Ex : logiciels, site internet, etc.)
+3. équipements neufs et dont la durée d'utilisation est égale ou > à 3 ans.
+4. Immobilisations financières
+5. et contrôler le calcul des provisions.
+6. Informations relatives à l'annexe
+
+## Taxes
+1. essence, entretien et loyers véhicules de tourisme, cadeaux > 69 €TTC,
+2. consommation personnelle,…
+3. dés le 1er euro pour les livraisons intracom
+4. 9 bis / Vérifier si l'entreprise est soumise à la DES
+5. Vérifier possibilité exonération CFE (artisan EI)
+6. Vérifier le Role de CFE (Taxe CMA)
+7. Etablir le cas échéant la 1447 M ou C
+8. La Taxe Foncière à provisionner
+9. La taxe d'apprentissage à prov
+10. La formation continue à prov
+11. L'effort construction (attention abattement dégressif sur 3 ans)
+12. Vérifier si Contribution sur les revenus locatifs (location sans TVA)
+13. 9 bis/ Penser à faire la DECLOYER
+14. Procédure collective (Sauvegarde, RJ), a-t-on pensé à isoler les sommes
+15. avant date d'entrée en procédure + vérifier concordance avec état des créances)?
+
+## Capitaux propres
+1. CAPITAUX PROPRES (Sociétés)
+2. 1 Bis / Tenir compte des formalités juridiques de l'année (Augm K ; Cession
+3. devenus inférieurs à la moitié du capital (sinon prévenir le service juridique)
+4. distribution de dividendes ?
+5. en tenir compte pour le calcul des intérêts déductibles.
+6. charges mixtes,...) à déterminer avec précision (attention à l'incidence TVA.)
+7. par l'exploitant ? incidence TVA.
+8. Provisions pour Risques et charges
+
+## Deb et cred divers
+1. Procédure collective (Sauvegarde, RJ), a-t-on pensé à isoler les sommes
+2. avant date d'entrée en procédure + vérifier concordance avec état des créances)?
+
+## Résulat Fiscal
+1. Calcul du résultat fiscal (Sté IS)
+2. étalement sur 3 ans, exonération… (reversement TVA)
+3. Crédit d'Impôt Compétitivité Emploi (CICE)
+4. Crédit d'impot apprentissage (apprentis et stagiaire)
+5. Crédit d'impot métiers d'art
+6. Crédit d'impot formation du chef d'entreprise
+7. Crédit d'impot emploi des réservistes
+8. Crédit d'impot pour adhésion à un groupement de prévention
+9. Crédit d'impot intéressement
+10. Crédit pour formation des salariés à l'épargne salariale
+11. Crédit d'impot en faveur de la production d'œuvres phonographiques
+12. Crédit d'impot en faveur des distributeurs de programmes audiovisuels
+13. Crédit d'impot audiovisuel
+14. Crédit d'impot en faveur de la création de jeux vidéos
+15. Crédit d'impot en faveur du rachat d'une entreprise par ses salariés
+16. Crédit d'impot en faveur des débitants de tabac
+17. Crédit d'impot maitre restaurateur
+18. Crédit d'impot pour dépenses de prospections commerciale
+19. Crédit d'impot nouvelle technologie
+20. Réduction d'impôt pour frais de comptabilité
+21. Réduction d'impot pour souscription au capital des entreprises de presse
+22. Mécenat d'entreprise (Attention si dons > 10 000 € déclaration complémentaire à faire)
+23. 13 Bis / Assurer le suivi des investissements éligibles au "sur-amortissement"
+24. fiscal (valable pour certains investissements du 15/04/2015 au 14/04/2017)
+25. Résultat Fiscal (2/2) - SARL OU EULR IS < 20 SALARIES
+26. * Libération intégrale du capital
+27. * Détention de 75% du capital par des personnes physiques ou
+28. par une société répondant à ce critère
+29. de type ZFU, ZRR, ZUS, AFR, BER, entreprises nouvelles,
+30. reprise d'entreprise en difficultés, ZRD,…
+
+## Bouclage dossier
+1. A comparer avec les exercices précédents et le cédage
+2. NOTE DE SYNTHESE (à joindre par mail à M. Noguer + copie résultat fiscal)
+3. Conclusion sur la cohérence et vraisemblance des comptes pris dans leur ensemble
+4. Les honoraires du cabinet sont-ils réglés ?
+5. Le client respecte-t-il toujours ses obligations en matière de communication de
+6. documents ou informations nécessaires, respect de ses obligations légales,
+7. réglementaires et conventionnelles ?
+
+## Rédaction de l'annexe
+1. Micro-entreprise (dispense d'annexe) sauf si CAC
+2. le cas échéant dans l'annexe de cette année
