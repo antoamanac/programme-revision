@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration – Programme de Révision</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding: 32px;
+      min-height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon svg { width: 24px; height: 24px; fill: white; }
+
+    .header-text h1 { font-size: 20px; font-weight: 700; }
+    .header-text p { font-size: 13px; color: #64748b; margin-top: 2px; }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+
+    .card h2 { font-size: 14px; font-weight: 600; margin-bottom: 16px; color: #334155; }
+
+    .field { margin-bottom: 16px; }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #374151;
+    }
+
+    .hint { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+
+    input, textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #1e293b;
+      background: #f9fafb;
+      transition: border-color .15s, box-shadow .15s;
+      font-family: "Courier New", monospace;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+      background: white;
+    }
+
+    .example {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 11px;
+      font-family: monospace;
+      color: #475569;
+      margin-top: 8px;
+      word-break: break-all;
+    }
+
+    .example span { color: #94a3b8; }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all .15s;
+    }
+
+    .btn-primary {
+      background: #3b82f6;
+      color: white;
+    }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+    .btn-secondary:hover { background: #e2e8f0; }
+
+    .info-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 12px;
+      color: #1d4ed8;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .info-box strong { display: block; margin-bottom: 4px; }
+
+    .status { font-size: 12px; color: #64748b; margin-right: auto; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="icon">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 8H13V3.5zm-3 13l-3-3 1.41-1.41L9 14.17l5.59-5.58L16 10l-7 7z"/></svg>
+    </div>
+    <div class="header-text">
+      <h1>Configuration</h1>
+      <p>Programme de Révision · Cabinet d'Expertise Comptable</p>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>🔧 Première utilisation</strong>
+    Renseignez les paramètres de connexion à votre base de données PostgreSQL. Ces informations sont sauvegardées localement sur votre machine.
+  </div>
+
+  <div class="card">
+    <h2>Base de données PostgreSQL</h2>
+    <div class="field">
+      <label for="dbUrl">URL de connexion <span style="color:#ef4444">*</span></label>
+      <input type="text" id="dbUrl" placeholder="postgresql://user:password@host:5432/database" />
+      <div class="hint">Format complet de connexion PostgreSQL</div>
+      <div class="example">
+        <span>Exemple :</span> postgresql://admin:motdepasse@localhost:5432/programme_revision
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Sécurité (optionnel)</h2>
+    <div class="field">
+      <label for="sessionSecret">Clé secrète de session</label>
+      <input type="text" id="sessionSecret" placeholder="Laissez vide pour utiliser la valeur par défaut" />
+      <div class="hint">Chaîne aléatoire longue pour sécuriser les sessions. Recommandé en production.</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <span class="status" id="status-text"></span>
+    <button class="btn-secondary" onclick="testConnection()">Tester la connexion</button>
+    <button class="btn-primary" onclick="saveSettings()">Enregistrer et démarrer</button>
+  </div>
+
+  <script>
+    // Load existing config
+    if (window.electronAPI) {
+      window.electronAPI.getConfig().then((config) => {
+        if (config.databaseUrl) document.getElementById("dbUrl").value = config.databaseUrl;
+        if (config.sessionSecret) document.getElementById("sessionSecret").value = config.sessionSecret;
+      });
+    }
+
+    function setStatus(msg, color = "#64748b") {
+      const el = document.getElementById("status-text");
+      el.textContent = msg;
+      el.style.color = color;
+    }
+
+    async function testConnection() {
+      const dbUrl = document.getElementById("dbUrl").value.trim();
+      if (!dbUrl) { setStatus("⚠ URL de connexion requise", "#f59e0b"); return; }
+      setStatus("Test en cours…");
+      // We can only do a basic URL format validation from renderer
+      try {
+        new URL(dbUrl);
+        if (!dbUrl.startsWith("postgres")) throw new Error("not postgres");
+        setStatus("✓ Format valide — testez après démarrage", "#16a34a");
+      } catch {
+        setStatus("✕ Format d'URL invalide", "#dc2626");
+      }
+    }
+
+    async function saveSettings() {
+      const dbUrl = document.getElementById("dbUrl").value.trim();
+      const sessionSecret = document.getElementById("sessionSecret").value.trim();
+
+      if (!dbUrl) { setStatus("⚠ L'URL de connexion est obligatoire", "#f59e0b"); return; }
+
+      if (window.electronAPI) {
+        await window.electronAPI.saveConfig({ databaseUrl: dbUrl, sessionSecret: sessionSecret || undefined });
+      }
+    }
+  </script>
+</body>
+</html>
