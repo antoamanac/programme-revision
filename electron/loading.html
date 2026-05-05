@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chargement…</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-app-region: drag;
+      user-select: none;
+    }
+
+    .card {
+      width: 100%; height: 100%;
+      background: linear-gradient(145deg, #1e3a5f 0%, #0f2340 100%);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.5);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 20%, rgba(59,130,246,.15) 0%, transparent 60%);
+    }
+
+    .logo-wrap {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 32px rgba(59,130,246,.4);
+    }
+
+    .logo-wrap svg { width: 36px; height: 36px; fill: #fff; }
+
+    h1 {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .sub {
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+      margin-top: -16px;
+    }
+
+    .spinner-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid rgba(255,255,255,.15);
+      border-top-color: #3b82f6;
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .status {
+      color: rgba(255,255,255,.5);
+      font-size: 12px;
+    }
+
+    .bar-wrap {
+      width: 200px; height: 4px;
+      background: rgba(255,255,255,.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #6366f1, #3b82f6);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s linear infinite;
+      border-radius: 2px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; width: 40%; }
+      50% { width: 70%; }
+      100% { background-position: 200% 0; width: 40%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wrap">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM9 17l-3-3 1.41-1.41L9 14.17l5.59-5.58L16 10l-7 7zm5-9V3.5L18.5 8H14z"/>
+      </svg>
+    </div>
+    <h1>Programme de Révision</h1>
+    <p class="sub">Cabinet d'Expertise Comptable</p>
+    <div class="spinner-wrap">
+      <div class="spinner"></div>
+      <p class="status">Démarrage du serveur…</p>
+    </div>
+    <div class="bar-wrap"><div class="bar"></div></div>
+  </div>
+</body>
+</html>
