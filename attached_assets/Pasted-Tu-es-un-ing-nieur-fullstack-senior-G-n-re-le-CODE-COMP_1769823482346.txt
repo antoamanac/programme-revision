@@ -1,0 +1,117 @@
+Tu es un ingénieur fullstack senior. Génère le CODE COMPLET d’une application web “Programme de Révision” (révision comptable) pour cabinets d’expertise comptable français.
+
+IMPORTANT (stratégie produit)
+Cette V1 est une WEB APP, mais elle DOIT être conçue pour être transformée ensuite en logiciel desktop OFFLINE via wrapper (Electron/Tauri).
+Donc : architecture en couches + adaptateurs, afin de remplacer facilement Postgres par SQLite et stockage cloud par stockage local.
+
+STACK (obligatoire)
+- Next.js 14 (App Router) + TypeScript
+- TailwindCSS + shadcn/ui
+- PostgreSQL + Prisma (V1)
+- Auth simple (Replit Auth si possible, sinon NextAuth Credentials) avec rôles :
+  - CHEF_MISSION
+  - EXPERT_COMPTABLE
+- Upload fichiers : stockage local dans /public/uploads en V1 + abstraction StorageAdapter
+- PDF : génération côté serveur depuis un template HTML (Playwright ou Puppeteer)
+
+ARCHITECTURE OBLIGATOIRE (pour wrapper offline ensuite)
+Implémente ces 3 couches séparées :
+1) UI (pages/components)
+2) Domain/Services (règles métier + cas d’usage)
+3) Infrastructure (adapters)
+   - RepositoryAdapter (DB) : PostgresPrismaAdapter (V1) + interface pour futur SqliteAdapter (V2)
+   - FileStorageAdapter : LocalFileAdapter (V1) + interface pour futur DesktopFileAdapter (V2)
+Aucune règle métier ne doit être dans les components UI : tout passe par les services.
+
+OBJECTIF MÉTIER
+Digitaliser un programme de révision comptable (Excel/PDF) utilisé comme preuve de conformité.
+Priorités : sécurisation / conformité + standardisation.
+Le logiciel ne fait PAS de calcul comptable.
+
+ENTITÉS (minimum)
+- User(id, name, email, role)
+- Client(id, name, identifiers?, notes)
+- Exercise(id, clientId, year, status: DRAFT|IN_REVIEW|LOCKED, createdAt)
+- Cycle(id, exerciseId, name, order)
+- Question(id, cycleId, label, order, active)
+- Answer(id, questionId, status: OUI|NON|NA, comment, updatedByUserId, updatedAt)
+- Attachment(id, answerId, fileType: PDF|IMAGE|EXCEL, filename, path, uploadedByUserId, uploadedAt)
+- Approval(id, cycleId, level: CHEF_MISSION|EXPERT_COMPTABLE, approvedByUserId, approvedAt)
+- AuditLog(id, entityType, entityId, action, beforeJson, afterJson, actorUserId, createdAt)
+
+RÈGLES MÉTIER (enforced côté serveur)
+1) Chaque question doit avoir un statut OUI/NON/NA.
+2) Si statut = NON => commentaire obligatoire.
+3) Validation PAR CYCLE en 2 étapes :
+   - Visa CHEF_MISSION puis Visa EXPERT_COMPTABLE.
+4) Après visa EXPERT_COMPTABLE : cycle verrouillé (answers + attachments read-only).
+5) Exercice verrouillé quand tous les cycles sont validés EXPERT_COMPTABLE.
+6) Archivage légal : aucune suppression/modif possible après LOCKED.
+7) AuditLog obligatoire pour :
+   - changement de statut
+   - modification commentaire
+   - upload/suppression logique (si autorisée avant lock)
+   - validation/lock
+
+FONCTIONNALITÉS (issues du besoin)
+- Programme unique, mais cycles/questions créables et modifiables par l’utilisateur à l’intérieur d’un exercice.
+- Possibilité de dupliquer un exercice précédent (copie cycles/questions) en gardant l’historique consultable.
+- Dashboard “Navigateur” avec :
+  - progression par cycle
+  - visas CM/EC (nom+date)
+  - points en suspens = réponses NON + réponses sans commentaire obligatoire + réponses manquantes
+- Écran spécifique LCB-FT (Norme Blanchiment) :
+  - sélection niveau vigilance: ALLÉGÉE / NORMALE / RENFORCÉE
+  - matrice de critères cochables
+  - justification texte
+  - validation intégrée au workflow (comme un cycle)
+
+PAGES (obligatoires)
+- /login
+- /clients (liste + créer)
+- /clients/[id] (détail + liste exercices + créer/dupliquer)
+- /exercises/[id] (Navigateur dashboard)
+- /exercises/[id]/cycles/[cycleId] (workspace de révision)
+- /exercises/[id]/lcbft (LCB-FT)
+- /exercises/[id]/export (génération PDF)
+
+WORKSPACE CYCLE (UI)
+Table “Questions” avec colonnes :
+- Libellé
+- Statut (dropdown OUI/NON/NA)
+- Commentaire (textarea)
+- Pièces jointes (upload + liste)
+- Dernière modif (date + user)
+Panneau latéral :
+- % progression
+- Visa CM (bouton si rôle autorisé + règles OK)
+- Visa EC (bouton si rôle autorisé + visa CM déjà fait + règles OK)
+- état verrouillage
+
+EXPORT PDF (critique)
+Générer un PDF structuré :
+- En-tête : client, exercice, date génération
+- Par cycle : tableau questions + statuts + commentaires
+- Liste pièces jointes par question
+- Bloc signatures : Visa Chef de mission + Visa Expert-comptable (nom + date)
+Sauvegarder le PDF généré et fournir un lien de téléchargement.
+
+SEED / TEMPLATE
+- Créer un programme template par défaut avec quelques cycles/questions.
+- Ajouter une page simple d’admin interne (accessible au rôle EXPERT_COMPTABLE) pour éditer cycles/questions d’un exercice.
+- Préparer un script /scripts/import-xlsx.ts (même si partiel) pour importer cycles/questions depuis un fichier Excel plus tard.
+
+DELIVERABLES (dans cet ordre)
+1) Arborescence fichiers
+2) Prisma schema complet
+3) Pages & endpoints (route handlers)
+4) Services (domain layer) + adapters (infra layer)
+5) UI
+6) PDF export
+7) Checklist de tests métier
+
+Commence maintenant par :
+A) file tree + architecture
+B) schema.prisma
+Puis génère le code.
+Aucune demande d’approbation. Code d’abord.
