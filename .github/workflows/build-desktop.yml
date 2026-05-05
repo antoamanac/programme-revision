@@ -40,11 +40,15 @@ jobs:
 
       - name: Install root dependencies
         run: npm ci
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+          PUPPETEER_SKIP_DOWNLOAD: "true"
 
       - name: Build web app
         run: npm run build
         env:
           NODE_ENV: production
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
 
       - name: Install Electron dependencies
         working-directory: electron
