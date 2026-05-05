@@ -61,7 +61,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSC_IDENTITY_AUTO_DISCOVERY: "false"
-          CSC_LINK: ""
+          WIN_CSC_LINK: "false"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
