@@ -63,10 +63,19 @@ jobs:
           CSC_IDENTITY_AUTO_DISCOVERY: "false"
           WIN_CSC_LINK: "false"
 
+      - name: List release files
+        run: ls -la electron/release/ || dir electron\release\
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.name }}
-          path: electron/release/${{ matrix.artifact }}
+          path: |
+            electron/release/*.exe
+            electron/release/*.dmg
+            electron/release/*.AppImage
+            electron/release/**/*.exe
+            electron/release/**/*.dmg
+            electron/release/**/*.AppImage
           if-no-files-found: warn
           retention-days: 30
