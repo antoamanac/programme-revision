@@ -1,0 +1,86 @@
+{
+  "name": "programme-revision-desktop",
+  "version": "1.0.0",
+  "description": "Programme de Révision - Application Desktop",
+  "main": "main.cjs",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never",
+    "dist:mac": "electron-builder --mac --publish never",
+    "dist:linux": "electron-builder --linux --publish never",
+    "dist:all": "electron-builder -mwl --publish never"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "fr.cabinet.programme-revision",
+    "productName": "Programme de Révision",
+    "copyright": "Cabinet d'Expertise Comptable",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "loading.html",
+      "setup.html"
+    ],
+    "extraResources": [
+      {
+        "from": "../dist",
+        "to": "dist",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "../node_modules",
+        "to": "node_modules",
+        "filter": [
+          "!**/puppeteer/**",
+          "!**/.bin/**",
+          "!**/electron/**",
+          "!**/electron-builder/**",
+          "!**/@replit/**",
+          "!**/vite/**",
+          "!**/esbuild/**",
+          "!**/typescript/**",
+          "!**/drizzle-kit/**",
+          "!**/tsx/**"
+        ]
+      },
+      {
+        "from": "../uploads",
+        "to": "uploads",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": [
+        { "target": "dmg", "arch": ["x64", "arm64"] }
+      ],
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "target": [
+        { "target": "AppImage", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Programme de Révision"
+    }
+  }
+}
