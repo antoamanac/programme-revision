@@ -2,6 +2,11 @@
   "name": "programme-revision-desktop",
   "version": "1.0.0",
   "description": "Programme de Révision - Application Desktop",
+  "author": "Cabinet d'Expertise Comptable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antoamanac/programme-revision"
+  },
   "main": "main.cjs",
   "private": true,
   "scripts": {
@@ -50,30 +55,22 @@
           "!**/drizzle-kit/**",
           "!**/tsx/**"
         ]
-      },
-      {
-        "from": "../uploads",
-        "to": "uploads",
-        "filter": ["**/*"]
       }
     ],
     "win": {
       "target": [
         { "target": "nsis", "arch": ["x64"] }
-      ],
-      "icon": "build/icon.ico"
+      ]
     },
     "mac": {
       "target": [
-        { "target": "dmg", "arch": ["x64", "arm64"] }
-      ],
-      "icon": "build/icon.icns"
+        { "target": "dmg", "arch": ["x64"] }
+      ]
     },
     "linux": {
       "target": [
         { "target": "AppImage", "arch": ["x64"] }
-      ],
-      "icon": "build/icon.png"
+      ]
     },
     "nsis": {
       "oneClick": false,
